@@ -91,7 +91,7 @@ const RoleWiseHomeScreen = () => {
     const user = useSelector(getCurrentUser);
 
     // If the role is ADMIN, return the HomeScreen component.
-    if (user.dashboard_role === roles.ADMIN) {
+    if (user.dashboard_role === roles.ADMIN || roles.PROGRAM_HEAD || roles.PRINCIPAL) {
         return <HomeScreen />;
     }
 

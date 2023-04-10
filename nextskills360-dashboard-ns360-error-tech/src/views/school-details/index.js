@@ -37,8 +37,6 @@ import { useSelector } from 'react-redux';
 import { roles } from 'constants/roles';
 import { getCurrentUser } from 'store/selectors';
 import { getProjectDataById } from 'services/project-queries';
-import { dataToExcel } from 'services/school-reports.js';
-
 const SchoolDetails = () => {
     const { dashboard_role } = useSelector(getCurrentUser);
     const { schoolId, projectId } = useParams();

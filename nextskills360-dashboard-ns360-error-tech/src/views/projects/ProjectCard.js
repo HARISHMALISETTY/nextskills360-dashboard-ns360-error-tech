@@ -28,7 +28,6 @@ import { ReactComponent as StudentIcon } from 'assets/images/icons/student.svg';
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router';
 import CountUp from 'react-countup';
-import { dataToExcel } from 'services/project-reports.js';
 import config from 'config';
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
@@ -109,7 +108,6 @@ const ProjectCard = ({
                                 <Grid container justifyContent="flex-end">
                                     <Grid item>
                                         <Avatar
-                                            onClick={() => dataToExcel(projectId, projectName)}
                                             variant="rounded"
                                             sx={{
                                                 ...theme.typography.commonAvatar,
