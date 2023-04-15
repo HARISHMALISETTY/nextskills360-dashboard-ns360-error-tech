@@ -2,8 +2,6 @@
 import PropTypes from 'prop-types';
 import { useState, useCallback, memo, useMemo, useRef } from 'react';
 import { Grid } from '@mui/material';
-import { Controlled as ControlledZoom } from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
 import { ImagePlaceholderFallback } from './ImagePlaceholderFallback';
 import { debounce } from 'lodash';
 
@@ -18,20 +16,6 @@ const gridItemStyles = {
 const MediaItem = ({ isImage, src }) => {
     // useRef to references previous video
     const videoRef = useRef(null);
-    // useState to control zoom
-    const [isZoomed, setIsZoomed] = useState(false);
-
-    const handleZoomChange = useCallback(
-        debounce(
-            (shouldZoom) => {
-                setIsZoomed(shouldZoom);
-            },
-            300,
-            { leading: true, trailing: false }
-        ),
-        []
-    );
-
     // function to Stop all other videos if current video is being played.
     const handlePlay = () => {
         // Pause any other videos
@@ -46,27 +30,16 @@ const MediaItem = ({ isImage, src }) => {
         videoRef.current.play();
     };
 
-    const zoomProps = useMemo(() => {
-        return {
-            isZoomed,
-            onZoomChange: handleZoomChange
-        };
-    }, [isZoomed]);
-
-    // Return Grid item
     return (
         <Grid container alignItems="center" justifyContent="center">
             <Grid item sx={isImage ? {} : gridItemStyles}>
                 {isImage ? (
-                    <ControlledZoom {...zoomProps}>
-                        <ImagePlaceholderFallback src={src} />
-                    </ControlledZoom>
+                    <ImagePlaceholderFallback src={src} />
                 ) : (
                     // Otherwise, render video element with source passed through props
                     <video
                         // Add reference to video tag
                         ref={videoRef}
-                        controls
                         controlsList="nodownload"
                         style={{
                             height: '194px',

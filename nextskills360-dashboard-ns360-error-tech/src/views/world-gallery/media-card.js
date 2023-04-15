@@ -166,19 +166,8 @@ const MediaCard = ({
                 <Grid container direction="column">
                     <Grid item>
                         <Grid container justifyContent="flex-end">
-                            <Card sx={{ justifyContent: 'center', width: '280px' }}>
+                            <Card>
                                 <CardHeader
-                                    avatar={
-                                        <Avatar
-                                            sx={{
-                                                backgroundColor: theme.palette.secondary.dark,
-                                                color: theme.palette.secondary.contrastText
-                                            }}
-                                            aria-label="Profile"
-                                        >
-                                            {postedBy && postedBy[0].toUpperCase()}
-                                        </Avatar>
-                                    }
                                     action={
                                         user.dashboard_role === roles.ADMIN && (
                                             <IconButton
@@ -209,10 +198,10 @@ const MediaCard = ({
                                     }
                                     subheader={formatPostedAt(postedAt)}
                                 />
-                                <CardMedia sx={{ alignItems: 'center', valign: 'middle' }}>
+                                <CardMedia>
                                     <MediaItem isImage={isImage} src={src} />
                                 </CardMedia>
-                                <CardActions sx={{ justifyContent: 'space-between' }}>
+                                <CardActions>
                                     <IconButton
                                         sx={{ color: liked ? 'red' : 'grey' }}
                                         aria-label="add to favorites"

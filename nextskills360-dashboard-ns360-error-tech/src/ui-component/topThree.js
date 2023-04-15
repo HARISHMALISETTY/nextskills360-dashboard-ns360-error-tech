@@ -152,12 +152,6 @@ const TopThree = ({ isLoading, isStudentsRank, label = 'Top 3 ______', data = sa
                                                                 width: item === 1 ? '6rem' : '5rem'
                                                             }}
                                                         >
-                                                            {isStudentsRank ? (
-                                                                <StudentIcon height={40} fill={theme.palette.secondary.light} />
-                                                            ) : (
-                                                                <TeacherIcon height={45} fill={theme.palette.secondary.light} />
-                                                            )}
-
                                                             <Typography
                                                                 sx={{
                                                                     fontSize: '1rem',

@@ -80,16 +80,6 @@ const ProfileSection = () => {
         prevOpen.current = open;
     }, [open]);
 
-    const date = new Date();
-    const hours = date.getHours();
-    let timeOfDay;
-    if (hours < 12) {
-        timeOfDay = 'Morning';
-    } else if (hours >= 12 && hours < 16) {
-        timeOfDay = 'Afternoon';
-    } else {
-        timeOfDay = 'Evening';
-    }
     const userData = useAuthState(authentication);
 
     return (
@@ -127,9 +117,7 @@ const ProfileSection = () => {
                         aria-controls={open ? 'menu-list-grow' : undefined}
                         aria-haspopup="true"
                         color="inherit"
-                    >
-                        {user?.user_name && user.user_name[0].toUpperCase()}
-                    </Avatar>
+                    ></Avatar>
                 }
                 label={<IconSettings stroke={1.5} size="1.5rem" color={theme.palette.primary.main} />}
                 variant="outlined"
@@ -162,25 +150,6 @@ const ProfileSection = () => {
                         <Paper>
                             <ClickAwayListener onClickAway={handleClose}>
                                 <MainCard border={false} elevation={16} content={false} boxShadow shadow={theme.shadows[16]}>
-                                    <Box sx={{ p: 2 }}>
-                                        <Stack>
-                                            <Stack direction="row" spacing={0.5} alignItems="center">
-                                                <Typography variant="h4">Good {timeOfDay},</Typography>
-                                                <Typography variant="h4" color="primary">
-                                                    {user.user_name}
-                                                </Typography>
-                                            </Stack>
-                                            <Typography variant="subtitle2">
-                                                {user.dashboard_role.startsWith('guest')
-                                                    ? 'Guest User'
-                                                    : formatFieldName(user.dashboard_role)}
-                                            </Typography>
-                                        </Stack>
-                                        <Divider />
-                                        <Box sx={{ mt: 1 }}>
-                                            <Typography variant="subtitle1">Ph. No: {userData[0]?.phoneNumber}</Typography>
-                                        </Box>
-                                    </Box>
                                     <Box sx={{ p: 2 }}>
                                         <List
                                             component="nav"

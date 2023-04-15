@@ -31,7 +31,7 @@ const HomeScreen = () => {
 
     return (
         <div style={{ marginTop: '5px' }}>
-            <Header showBackButton={false} title="Projects" />
+            <Header title="Projects" />
             {!loading &&
                 Object.keys(yearWiseProjects).map((academicYear) => {
                     return (

@@ -10,14 +10,11 @@ import CloseIcon from '@mui/icons-material/Close';
 
 // assets
 import { IconMenu2 } from '@tabler/icons';
-import { useSelector } from 'react-redux';
 
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
 const Header = ({ handleLeftDrawerToggle }) => {
     const theme = useTheme();
-
-    const menuOpen = useSelector((state) => state.customization.opened);
 
     return (
         <>
@@ -65,7 +62,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
                         onClick={handleLeftDrawerToggle}
                         color="inherit"
                     >
-                        {menuOpen ? <CloseIcon /> : <IconMenu2 stroke={1.5} size="1.3rem" />}
+                        <IconMenu2 stroke={1.5} size="1.3rem" />
                     </Avatar>
                 </ButtonBase>
             </Box>

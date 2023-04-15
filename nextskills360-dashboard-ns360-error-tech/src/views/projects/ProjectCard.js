@@ -27,7 +27,6 @@ import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import { ReactComponent as StudentIcon } from 'assets/images/icons/student.svg';
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from 'react-router';
-import CountUp from 'react-countup';
 import config from 'config';
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
@@ -173,12 +172,7 @@ const ProjectCard = ({
                                                         fontWeight: 500
                                                     }}
                                                 >
-                                                    <CountUp
-                                                        start={0}
-                                                        end={studentCount}
-                                                        duration={config.countUpAnimationDuration}
-                                                        formattingFn={formatNumber}
-                                                    />
+                                                    {studentCount}
                                                 </Typography>
                                             </Grid>
                                         </Grid>
@@ -205,12 +199,7 @@ const ProjectCard = ({
                                                         fontWeight: 500
                                                     }}
                                                 >
-                                                    <CountUp
-                                                        start={0}
-                                                        end={teacherCount}
-                                                        duration={config.countUpAnimationDuration}
-                                                        formattingFn={formatNumber}
-                                                    />
+                                                    {teacherCount}
                                                 </Typography>
                                             </Grid>
                                         </Grid>

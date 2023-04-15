@@ -88,7 +88,7 @@ const ReportsSettings = () => {
     return (
         !loading && (
             <>
-                <Header showBackButton={false} title={`${projectData?.project_name || ''}`} leftComponent={<></>} rightComponent={<></>} />
+                <Header title={`${projectData?.project_name || ''}`} leftComponent={<></>} rightComponent={<></>} />
                 <ReportsCountStatus projectData={projectData} updateShowCountStatus={updateShowCountStatus} />
                 <MainCard title="Add New User" sx={{ mb: 1.25 }}>
                     <UserForm schools={schools} schoolsLoading={schoolsLoading} addNewUser={handleAddNewUser} />

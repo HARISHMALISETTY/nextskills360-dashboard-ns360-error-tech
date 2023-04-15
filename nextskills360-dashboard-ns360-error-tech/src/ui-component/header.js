@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 
 // material-ui
 import { Card, Grid, Typography } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-
 // assets
 import { useNavigate } from 'react-router';
 
-const Header = ({ title, subTitle = '', leftComponent, rightComponent, showBackButton = true, downloadIcon = false }) => {
+const Header = ({ title, subTitle = '', leftComponent, rightComponent, downloadIcon = false }) => {
     const navigate = useNavigate();
 
     return (
@@ -16,26 +14,8 @@ const Header = ({ title, subTitle = '', leftComponent, rightComponent, showBackB
                 <Grid container justifyContent="center" alignItems="center">
                     <Grid item sx={{ width: '100%', maxWidth: '900px' }}>
                         <Grid container justifyContent="space-between" alignItems="center" spacing={1}>
-                            {showBackButton && (
-                                <Grid item xs={6} lg={2}>
-                                    <button
-                                        style={{
-                                            borderColor: 'transparent',
-                                            cursor: 'pointer',
-                                            backgroundColor: 'orange',
-                                            borderRadius: '10px',
-                                            color: 'white',
-                                            display: 'flex',
-                                            justifyContent: 'center',
-                                            alignItems: 'center'
-                                        }}
-                                        onClick={() => navigate(-1)}
-                                    >
-                                        <ArrowBackIcon />
-                                    </button>
-                                </Grid>
-                            )}
-                            <Grid item xs={6} lg={showBackButton ? 1 : 3}>
+                            <Grid item xs={6} lg={2}></Grid>
+                            <Grid item xs={6} lg={1}>
                                 <Grid container justifyContent={{ sm: 'flex-end', xs: 'flex-end', lg: 'flex-start' }} alignItems="center">
                                     <Grid item>
                                         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -75,7 +55,6 @@ Header.propTypes = {
     subTitle: PropTypes.string,
     leftComponent: PropTypes.node,
     rightComponent: PropTypes.node,
-    showBackButton: PropTypes.bool,
     downloadIcon: PropTypes.bool
 };
 

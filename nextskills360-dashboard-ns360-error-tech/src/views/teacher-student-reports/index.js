@@ -129,7 +129,6 @@ const TeacherReports = () => {
                         sx={{ fontSize: '1.8rem', color: theme.palette.primary.main, cursor: 'pointer' }}
                     />
                 }
-                showBackButton={false}
             />
             <Grid container justifyContent="center">
                 <Grid container direction="column" sx={{ maxWidth: 900 }}>

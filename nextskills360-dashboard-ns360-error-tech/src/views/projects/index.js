@@ -45,7 +45,7 @@ const HomeScreen = () => {
 
     return (
         <div style={{ marginTop: '5px' }}>
-            <Header showBackButton={false} title="Projects" rightComponent={<StudentTeacherLegends />} />
+            <Header title="Projects" rightComponent={<StudentTeacherLegends />} />
             {!loading &&
                 Object.keys(yearWiseProjects).map((academicYear) => {
                     return (
